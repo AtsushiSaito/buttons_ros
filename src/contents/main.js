@@ -6,7 +6,9 @@ var buttons_value = [];
 ros.on('connection', function () {
     console.log("WebSocket: connected");
     n_buttons_param.get(function (n) {
-        nButtons = n;
+        if (n == null) { nButtons = 3 }
+        if (n != null) { nButtons = n; }
+
         var buttons_div = document.getElementById("buttons_div");
         for (var i = 0; i < nButtons; i++) {
             buttons_div.innerHTML += '<a href="#" class="normal-button" id="buttons' + i.toString() + '" onclick="push_button('
