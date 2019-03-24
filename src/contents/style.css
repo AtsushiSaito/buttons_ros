@@ -1,0 +1,16 @@
+.normal-button {
+    display: inline-block;
+    padding: 1em 1em;
+    width: 100px;
+    text-align: center;
+    margin: 5px;
+    text-decoration: none;
+    background: #e9dfe5;
+    color: #FFF;
+    border-radius: 5px;
+  }
+  .normal-button:active {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    border-bottom: none;
+  }
