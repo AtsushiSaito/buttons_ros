@@ -26,12 +26,16 @@ localhost:8000
 ```
 ## 3. Node
 
-## 3.1 web_buttons
+## 3.1 web_buttons, local_button_node
 このノードは、Webブラウザ上にボタンを表示し、ボタンのON/OFFの情報をトピックとして配信します。
 ### 3.1.1 Published Topics
 buttons ([buttons_ros/Buttons](https://github.com/AtsushiSaito/buttons_ros/blob/master/msg/Buttons.msg))  
 ボタンの状態は、buttonsという配列で管理されています。
 
-### 3.1.2 Parameter
+### 3.1.2 Subscribe Topics
+buttons ([buttons_ros/Buttons](https://github.com/AtsushiSaito/buttons_ros/blob/master/msg/Buttons.msg))  
+ボタンの状態は、buttonsという配列で管理されています。
+
+### 3.1.3 Parameter
 n_buttons (bool, default: 3)  
 ボタンの数をパラメータで変更できます。
