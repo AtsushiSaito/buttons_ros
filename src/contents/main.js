@@ -34,14 +34,24 @@ const buttons_node = new ROSLIB.Topic({
     messageType: "buttons_ros/Buttons"
 });
 
+buttons_node.subscribe(function (message) {
+    for (var i = 0; i < nButtons; i++) {
+        var buttons = document.getElementById("buttons" + i.toString());
+        if (message.buttons[i] == false) {
+            buttons_value[i] = "";
+            buttons.style.backgroundColor = '#e9dfe5';
+        } else {
+            buttons_value[i] = " ";
+            buttons.style.backgroundColor = '#3d3d3f';
+        }
+    }
+});
+
 function push_button(n) {
-    var buttons = document.getElementById("buttons" + n.toString());
     if (buttons_value[n] == "") {
         buttons_value[n] = " ";
-        buttons.style.backgroundColor = '#3d3d3f';
     } else {
         buttons_value[n] = "";
-        buttons.style.backgroundColor = '#e9dfe5';
     }
     buttonMsg = []
     for (var i = 0; i < nButtons; i++) {
