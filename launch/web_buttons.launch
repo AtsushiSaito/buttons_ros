@@ -1,6 +1,7 @@
 <launch>
     <param name="n_buttons" value="3" />
     <node pkg="buttons_ros" name="web_buttons" type="web_buttons.py" args="8000" required="true" />
+    <node pkg="buttons_ros" name="button_node" type="button_node.py" required="true" />
     <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
         <arg name="port" value="9000"/>
     </include>
